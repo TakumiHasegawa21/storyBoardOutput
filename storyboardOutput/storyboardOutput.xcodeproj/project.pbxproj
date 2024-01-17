@@ -13,6 +13,7 @@
 		CB0F71AF2B4D106D002C3292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0F71AD2B4D106D002C3292 /* Main.storyboard */; };
 		CB0F71B12B4D106E002C3292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB0F71B02B4D106E002C3292 /* Assets.xcassets */; };
 		CB0F71B42B4D106E002C3292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0F71B22B4D106E002C3292 /* LaunchScreen.storyboard */; };
+		CBB538EF2B5796C4003F286A /* AddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB538EE2B5796C4003F286A /* AddressResponse.swift */; };
 		D37FCD22817A6885AEA584C1 /* Pods_storyboardOutput.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8F7A159DD3121B4B5DE048 /* Pods_storyboardOutput.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		CB0F71B02B4D106E002C3292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB0F71B32B4D106E002C3292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB0F71B52B4D106E002C3292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB538EE2B5796C4003F286A /* AddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				CB0F71A72B4D106D002C3292 /* AppDelegate.swift */,
 				CB0F71A92B4D106D002C3292 /* SceneDelegate.swift */,
 				CB0F71AB2B4D106D002C3292 /* ViewController.swift */,
+				CBB538EE2B5796C4003F286A /* AddressResponse.swift */,
 				CB0F71AD2B4D106D002C3292 /* Main.storyboard */,
 				CB0F71B02B4D106E002C3292 /* Assets.xcassets */,
 				CB0F71B22B4D106E002C3292 /* LaunchScreen.storyboard */,
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0F71AC2B4D106D002C3292 /* ViewController.swift in Sources */,
+				CBB538EF2B5796C4003F286A /* AddressResponse.swift in Sources */,
 				CB0F71A82B4D106D002C3292 /* AppDelegate.swift in Sources */,
 				CB0F71AA2B4D106D002C3292 /* SceneDelegate.swift in Sources */,
 			);
