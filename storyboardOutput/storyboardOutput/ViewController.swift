@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import Alamofire
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
+    // ラベルとボタンをStoryboardに配置し、IBOutletおよびIBActionを接続
+    @IBOutlet private weak var dataLabel: UILabel!
+    @IBOutlet private weak var fetchDataButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // 初期設定などがあればここに書く
     }
-
-
+    
+    @IBAction func fetchDataTapped(_ sender: UIButton) {
+        // データを取得するためのURL
+        let url = "https://weather.tsukumijima.net/api/forecast/city/400040"
+        
+        // GETリクエストの送信
+        AF.request(url).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                // レスポンスデータをラベルに表示
+                if let json = value as? [String: Any] {
+                    self.dataLabel.text = json.
+                }
+            case .failure(let error):
+                // エラーハンドリング
+                self.dataLabel.text = "Error: \(error.localizedDescription)"
+            }
+        }
+    }
 }
-
