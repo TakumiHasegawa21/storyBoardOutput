@@ -6,5 +6,6 @@ target 'storyboardOutput' do
   use_frameworks!
 
   # Pods for storyboardOutput
+  pod 'Alamofire', '~> 5.4'
 
 end
