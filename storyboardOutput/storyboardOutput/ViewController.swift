@@ -15,40 +15,50 @@ enum ValidationError: Error {
     case usernameTooShort
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
+    @IBOutlet private weak var resultLabel: UILabel!
+    @IBOutlet private weak var userNameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var validateButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ユーザー入力の例
-        let username = "abc"
-        let password = "password"
+        // 検証ボタンにアクションを追加
+        validateButton.addTarget(self, action: #selector(didTapValidateButton), for: .touchUpInside)
+    }
+    
+    // 3. 検証ボタンがタップされたときの処理
+    @objc private func didTapValidateButton() {
+        resultLabel.text = ""
         
-        // 3. エラーをキャッチして処理
+        let username = userNameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
         do {
             try processUserInput(username: username, password: password)
+            resultLabel.textColor = .green
+            resultLabel.text = "検証成功！"
         } catch ValidationError.usernameTooShort {
-            print("ユーザー名が短すぎます")
-        } catch ValidationError.invalidEmail {
-            print("無効なメールアドレスです")
+            resultLabel.text = "ユーザー名が短すぎます"
         } catch ValidationError.weakPassword {
-            print("パスワードが弱すぎます")
+            resultLabel.text = "パスワードが弱すぎます"
         } catch {
-            print("その他のエラー: \(error)")
+            resultLabel.text = "予期しないエラー: \(error)"
         }
     }
     
-    // 2. エラーを投げる関数
+    // 4. エラーを投げる関数
     func validateUsername(_ username: String) throws {
         if username.count < 5 {
             throw ValidationError.usernameTooShort
         }
     }
     
-    // 4. エラーハンドリングを伝播させる関数
+    // 5. エラーハンドリングを伝播させる関数
     func processUserInput(username: String, password: String) throws {
         try validateUsername(username)
-        // 他の処理（例: パスワードの検証など）
         if password.count < 8 {
             throw ValidationError.weakPassword
         }
