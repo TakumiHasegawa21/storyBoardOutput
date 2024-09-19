@@ -4,6 +4,9 @@ default_platform(:ios)
 platform :ios do
   desc "Runs all the tests"
   lane :test do
-    scan   # fastlaneのscanアクションを使ってテストを実行
+    scan(
+      scheme: "storyboardOutput",  # 新しく作成したスキーム名を指定
+      workspace: "./storyboardOutput.xcworkspace"  # ワークスペースのパスを指定
+    )
   end
 end
