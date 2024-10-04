@@ -52,3 +52,7 @@ identifier_name:
     - n
     - x
     - y
+    
+analyzer_rules:
+  explicit_self: true
+
